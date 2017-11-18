@@ -1,0 +1,53 @@
+<%include partials/header %>
+<div class="container">
+	<header class="jumbotron">
+		<h1 style="text-align:center">New Whisky?</h1>
+		<p style="text-align:center">
+                   <a class="text-center btn btn-primary btn-lg" href="https://whiskyhomepage-up1990.c9users.io/collection">Go to collection</a>    
+               </p>
+	</header>
+		
+	<div class="row ">
+			<div style="margin:25px auto; width:30%">
+				<form action="/collection" method="POST" autocomplete="on">	
+					<div class="form-group">
+						<label for="Date">Date</label>		
+						<input class="form-control" type="date" name="date">
+					</div>
+					<div class="form-group">
+						<label for="distillery">Distillery</label>
+						<input class="form-control" type="text" name="distillery" >
+					</div>
+					<div class="form-group">
+						<label for="age">Age</label>	
+						<input class="form-control" type="text" name="age">
+					</div>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input class="form-control" type="text" name="name">
+					</div>
+					<div class="form-group">
+						<label for="cask">Cask</label>
+						<input class="form-control" type="text" name="cask">
+					</div>
+					<div class="form-group">
+						<label for="region">Region</label>	
+						<input class="form-control" type="text" name="region">
+					</div>
+					<div class="form-group">	
+						<label for="taste">Taste</label>
+						<input class="form-control" type="Range" name="taste">
+					</div>
+					<div class="form-group">
+						<label for="image">Image</label>
+						<input class="form-control" type="text" name="image" placeholder="enter image url">
+					</div>
+					<div class="form-group">
+						<button class="btn btn-lg btn-primary btn-block">Submit</button>
+					</div>
+				</form>
+			</div>
+	</div>
+</div>
+
+<%include partials/footer%>
