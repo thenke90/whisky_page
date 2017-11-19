@@ -22,11 +22,13 @@ var whiskySchema = new mongoose.Schema({
 
 var Whisky = mongoose.model("Whisky", whiskySchema);
 
+//NEW shows form to create new entry
 app.get("/", function(req,res){
    res.render("homepage");
    console.log("server startet, neue Katze:"+""+catNames.random());
 });
 
+//INDEX Path lists all whiskies
 app.get("/collection", function(req,res){
    Whisky.find({}, function (err,allWhisky){
       if (err){
@@ -38,7 +40,7 @@ app.get("/collection", function(req,res){
    });
 });
 
-
+//CREATE new entry
 app.post("/collection", function(req,res){
    var date = req.body.date;
    var distillery = req.body.distillery;
@@ -59,6 +61,13 @@ app.post("/collection", function(req,res){
       });
 });
 
+//Show more infors about the whisky
+app.get("/collection/:id", function(req, res){
+   //find whisky with specific ID
+   res.send("this will be the show page");
+   //render page with details
+   
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
   console.log("server started");  
