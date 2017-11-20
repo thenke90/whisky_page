@@ -34,7 +34,7 @@ app.get("/collection", function(req,res){
       if (err){
          console.log(err);
       }else {
-         res.render("collection", {whisky: allWhisky});
+         res.render("index", {whisky: allWhisky});
       }
       
    });
@@ -64,9 +64,8 @@ app.post("/collection", function(req,res){
 //Show more infors about the whisky
 app.get("/collection/:id", function(req, res){
    //find whisky with specific ID
-   res.send("this will be the show page");
+   res.render("show");
    //render page with details
-   
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){

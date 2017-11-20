@@ -22,11 +22,15 @@
     <div class="row text-center" style="display:flex;flex-wrap: wrap;">
              <%whisky.forEach(function(whisky){%>
                     <div class="col-md-3 col-sm-6">
-                        <div class="caption">
-                             <h1><%=whisky.distillery%></h1>
-                        </div>     
-                        <div class="thumbnail">     
+                        <div class="thumbnail">  
+                            <div class="caption">
+                                 <h1><%=whisky.distillery%></h1>
+                            </div>     
+                               
                             <img src="<%=whisky.image%>">
+                            <p style="margin: 10px">
+                                <a href="" class="btn btn-primary">see more</a>
+                            </p>
                         </div>
                     </div>
                 <% }); %>
