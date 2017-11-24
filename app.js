@@ -8,7 +8,7 @@ mongoose.connect("mongodb://localhost/whisky");
 app.use(bodyParser.urlencoded({exntended: true}));
 app.set("view engine", "ejs");
 
-// Schema setup
+// Schema setup 
 var whiskySchema = new mongoose.Schema({
    date:Date,
    distillery:String,
