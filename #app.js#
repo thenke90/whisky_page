@@ -20,7 +20,7 @@ var whiskySchema = new mongoose.Schema({
    image:String
 });
 
-var Whisky = mongoose.model("whisky", whiskySchema);
+var Whisky = mongoose.model("Whisky", whiskySchema);
 
 //NEW shows form to create new entry
 app.get("/", function(req,res){
@@ -36,6 +36,7 @@ app.get("/collection", function(req,res){
       }else {
          res.render("index", {whisky: allWhisky});
       }
+      
    });
 });
 
@@ -63,16 +64,10 @@ app.post("/collection", function(req,res){
 //Show more infors about the whisky
 app.get("/collection/:id", function(req, res){
    //find whisky with specific ID
-   Whisky.findById(req.params.id, function(err, foundWhisky){
-          if (err){
-            console.log(err);
-          }else {
-          //render page with details
-            res.render("show", {whisky: foundWhisky});
-          }  
-});
+   res.render("show");
+   //render page with details
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
   console.log("server started");  
-});
+})				// 
