@@ -63,7 +63,7 @@ app.post("/collection", function(req,res){
 //Show more infors about the whisky
 app.get("/collection/:id", function(req, res){
    //find whisky with specific ID
-   Whisky.findById(req.params.idrr, function(err, foundWhisky){
+   Whisky.findById(req.params.id, function(err, foundWhisky){
           if (err){
             console.log(err);
           }else {
