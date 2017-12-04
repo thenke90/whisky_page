@@ -2,9 +2,10 @@ var express = require("express"),
    app = express(),
    bodyParser = require("body-parser"),
    mongoose = require("mongoose"),
-   catNames = require('cat-names')
+   catNames = require('cat-names');
 
-mongoose.connect("mongodb://localhost/whisky");
+//mongoose.connect("mongodb://localhost/whisky");
+mongoose.connect("mongodb://tobias:12345@ds129706.mlab.com:29706/whisky_page", {useMongoClient: true});
 app.use(bodyParser.urlencoded({exntended: true}));
 app.set("view engine", "ejs");
 
