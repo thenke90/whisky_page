@@ -36,11 +36,13 @@
 					</div>
 					<div class="form-group">	
 						<label for="taste">Taste</label>
-						<input class="form-control" type="Range" name="taste">
+						<input class="form-control" type="Range" min="0" max="100" name="taste" value="80" step="1" oninput="outputUpdate(value)">
+						<output for="taste" id="tastePoints">80</output>
 					</div>
 					<div class="form-group">
 						<label for="image">Image</label>
 						<input class="form-control" type="text" name="image" placeholder="enter image url">
+						
 					</div>
 					<div class="form-group">
 						<button class="btn btn-lg btn-primary btn-block">Submit</button>
