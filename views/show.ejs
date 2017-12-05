@@ -1,4 +1,42 @@
 <%include partials/header %>
-<h1>Hello</h1>
-
-<p><%=whisky.distillery%></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+          <table>
+              <thead>
+                  <tr>
+                      <th colspan="2">Whisky Information for <%=whisky.distillery%> <%=whisky.age%></th>
+                      <th colspan="2"><%=whisky.name%></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                     <td>Date: </td>
+                     <td><%=whisky.date%></td>
+                  </tr>
+                  <tr>
+                     <td>Age: </td> 
+                     <td><%=whisky.age%></td>
+                  </tr>
+                  <tr>
+                     <td>Cask: </td> 
+                     <td><%=whisky.cask%></td>
+                  </tr>
+                  <tr>
+                     <td>Region: </td>
+                     <td><%=whisky.region%></td>
+                  </tr>
+                  <tr>
+                     <td>Taste: </td> 
+                     <td><%=whisky.taste%></td>
+                  </tr>
+              </tbody>
+          </table>  
+        </div>
+        <div class="col-md-3">
+            <p>
+                <img src="<%=whisky.image%>">
+            </p>
+        </div>
+    </div>
+</div>
