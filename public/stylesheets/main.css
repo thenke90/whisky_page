@@ -1,3 +1,23 @@
 body {
     background: #eaecef;
 }
+
+.indexFoto {
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#delete{
+    margin-left: 20px;
+    border: solid 1px;
+    background-color: #e83e5a;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+}
+
+.caption{
+    display: flex;
+    justify-content: center;
+}

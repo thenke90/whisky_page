@@ -21,8 +21,9 @@
              <%whisky.forEach(function(whisky){%>
                     <div class="col-md-3 col-sm-6">
                         <div class="thumbnail">  
-                            <div class="caption">
+                            <div class="caption" id="caption">
                                  <h1><%=whisky.distillery%></h1>
+                                 <button id="delete" onclick="deletion()">X</button>
                             </div>     
                                
                             <img src="<%=whisky.image%>">
