@@ -4,8 +4,8 @@ var express = require("express"),
    mongoose = require("mongoose"),
    catNames = require('cat-names');
 
-//mongoose.connect("mongodb://localhost/whisky");
-mongoose.connect("mongodb://tobias:12345@ds129706.mlab.com:29706/whisky_page", {useMongoClient: true});
+mongoose.connect("mongodb://localhost/whisky");
+//mongoose.connect("mongodb://tobias:12345@ds129706.mlab.com:29706/whisky_page", {useMongoClient: true});
 app.use(bodyParser.urlencoded({exntended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -73,6 +73,19 @@ app.get("/collection/:id", function(req, res){
             res.render("show", {whisky: foundWhisky});
           }  
 });
+});
+
+
+app.delete("/collection/:id/remove", function(req, res){
+   Whisky.findByIdAndRemove(req.params.id, function(err, deleteWhisky){
+      if (err){
+         alert("uuups that didnt work");
+         console.log("not deleted");
+      }else{
+         res.send("worked");
+      }
+   });
+   //res.send("this is the delete route");
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){

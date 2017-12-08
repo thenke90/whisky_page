@@ -23,7 +23,7 @@
                         <div class="thumbnail">  
                             <div class="caption" id="caption">
                                  <h1><%=whisky.distillery%></h1>
-                                 <button id="delete" onclick="deletion()">X</button>
+                                 <button id="delete" onclick="deletion()"><a href="/collection/<%= whisky._id%>/delete">X</a></button>
                             </div>     
                                
                             <img src="<%=whisky.image%>">
