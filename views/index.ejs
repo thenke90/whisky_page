@@ -24,9 +24,6 @@
                             <div class="caption" id="caption">
                                  <h1><%=whisky.distillery%></h1>
                                  <button id="delete" onclick="deletion()"><a href="/collection/<%= whisky._id%>/remove?_method=DELETE">X</a></button>
-                                <!--<form id="delete-form" action="/collection/<%= whisky._id%>/remove?_method=DELETE" method="POST">
-                                    <button class="btn btn-xs btn-danger">Delete</button>
-                                </form> -->
                             </div>     
                                
                             <img src="<%=whisky.image%>">
