@@ -1,46 +1,43 @@
 <%include partials/header %>
 <div class="container">
-    <div class="row">
-        <div class="col-md-3">
+    <div id="show">
+        <div>
           <table>
               <thead>
                   <tr>
-                      <th colspan="2">Whisky Information for <%=whisky.distillery%> <%=whisky.age%></th>
-                  </tr>
-                  <tr>
-                     <th colspan="2"><%=whisky.name%></th> 
+                      <th colspan="2">Whisky Information for: <%=whisky.distillery%> <%=whisky.name%> <%=whisky.age%></th>
                   </tr>
               </thead>
               <tbody>
                   <tr>
-                     <td>Date: </td>
+                     <td class="showTableInfos">Date: </td>
                      <td><%=whisky.date%></td>
                   </tr>
                   <tr>
-                     <td>Age: </td> 
+                     <td class="showTableInfos">Age: </td> 
                      <td><%=whisky.age%></td>
                   </tr>
                   <tr>
-                     <td>Cask: </td> 
+                     <td class="showTableInfos">Cask: </td> 
                      <td><%=whisky.cask%></td>
                   </tr>
                   <tr>
-                     <td>Region: </td>
+                     <td class="showTableInfos">Region: </td>
                      <td><%=whisky.region%></td>
                   </tr>
                   <tr>
-                     <td>Taste: </td> 
+                     <td class="showTableInfos">Taste: </td> 
                      <td><%=whisky.taste%></td>
                   </tr>
                   <tr>
                       <td colspan="2">
-                          <a class="btn btn-primary btn-lg btn-block" href="/">click to home</a> 
+                          <a class="btn btn-primary btn-lg btn-block" href="/collection">click to collection</a> 
                       </td>
                   </tr>
               </tbody>
           </table>
         </div>
-        <div class="col-md-3">
+        <div>
             <p>
                 <img src="<%=whisky.image%>">
             </p>

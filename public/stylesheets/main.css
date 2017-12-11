@@ -1,5 +1,5 @@
 body {
-    background: #eaecef;
+    background: #ffffff;
 }
 
 .indexFoto {
@@ -8,16 +8,31 @@ body {
     flex-wrap: wrap;
 }
 
-#delete{
-    margin-left: 20px;
-    border: solid 1px;
+.delete{
+   
+    border: solid 1px red;
     background-color: #e83e5a;
     height: 40px;
     width: 40px;
     margin-top: 20px;
+    margin-left: 20px;
 }
 
 .caption{
     display: flex;
     justify-content: center;
+}
+
+#headline{
+    font-size: 25px;
+    
+}
+
+#show{
+    display: flex;
+    margin-top: 40px;
+}
+
+.showTableInfos{
+    padding-right:10px;
 }

@@ -19,11 +19,21 @@
      </div>    
     <div class="row text-center" style="display:flex;flex-wrap: wrap;">
              <%whisky.forEach(function(whisky){%>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-lg-4 col-md-3 col-sm-6">
                         <div class="thumbnail">  
                             <div class="caption" id="caption">
-                                 <h1><%=whisky.distillery%></h1>
-                                 <button id="delete" onclick="deletion()"><a href="/collection/<%= whisky._id%>/remove?_method=DELETE">X</a></button>
+                                 <h1><%=whisky.distillery%> <%=whisky.name%> <%=whisky.age%></h1>
+                                 <button id="delete" onclick="deletion()" class="btn btn-secondary btn-sm delete">X</button>
+                                 <script>
+                                        function deletion(){
+                                        var check = confirm("Do You really want to delete?");
+                                        if (check == true){
+                                            window.location.assign("/collection/<%=whisky._id%>/remove?_method=DELETE");
+                                        }else {
+                                            return false;
+                                            }
+                                        }
+                                </script>
                             </div>     
                                
                             <img src="<%=whisky.image%>">
