@@ -22,7 +22,7 @@
                     <div class="col-lg-4 col-md-3 col-sm-6">
                         <div class="thumbnail">  
                             <div class="caption" id="caption">
-                                 <h1><%=whisky.distillery%> <%=whisky.name%> <%=whisky.age%></h1>
+                                 <h3 ><%=whisky.distillery%> <%=whisky.age%> <%=whisky.name%></h3>
                                  <button id="delete" onclick="deletion()" class="btn btn-secondary btn-sm delete">X</button>
                                  <script>
                                         function deletion(){
@@ -36,7 +36,7 @@
                                 </script>
                             </div>     
                                
-                            <img src="<%=whisky.image%>">
+                            <img id="indexFoto" src="<%=whisky.image%>">
                             <p style="margin: 10px">
                                 <a href="/collection/<%= whisky._id%>" class="btn btn-primary">see more</a>
                             </p>

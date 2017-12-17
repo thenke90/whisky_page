@@ -2,14 +2,11 @@ body {
     background: #ffffff;
 }
 
-.indexFoto {
-    height: 100px;
-    display: flex;
-    flex-wrap: wrap;
+#indexFoto {
+    height: 300px;
 }
 
 .delete{
-   
     border: solid 1px red;
     background-color: #e83e5a;
     height: 40px;
@@ -40,3 +37,4 @@ body {
 #image{
     width: 500px;
 }
+
