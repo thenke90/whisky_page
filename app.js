@@ -36,10 +36,21 @@ app.get("/collection", function(req,res){
    Whisky.find({}, function (err,allWhisky){
       if (err){
          console.log(err);
-      }else {
-         res.render("index", {whisky: allWhisky});
+      }else{
+         Whisky.count({},function(err, count){
+            if (count){
+               res.render("index", {
+                  whisky: allWhisky,
+                  count: count
+               });
+            }else {
+               console.log(err);
+            }
+         }); 
       }
-   });
+   });  
+   
+     
 });
 
 //CREATE new entry
