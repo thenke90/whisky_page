@@ -14,6 +14,7 @@ var express = require("express"),
 mongoose.connect("mongodb://tobias:12345@ds129706.mlab.com:29706/whisky_page", {useMongoClient: true});
 app.use(bodyParser.urlencoded({exntended: true}));
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 
 //passport config
 app.use(require("express-session")({
