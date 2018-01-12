@@ -44,3 +44,36 @@ body {
  font-weight: bold;
 }
 
+.loginContainer{
+    margin-top: 100px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border:solid 1px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #C9D2D9;
+    padding: 10px;
+}
+
+.loginHeadline{
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.loginText{
+    width: 300px;
+    margin: 10px auto 10px auto;
+    text-align: center;
+}
+
+.loginButton{
+    width: 300px;
+    text-align: center;
+    margin:5px auto 5px auto;
+}
+
+a {
+    color: white;
+}
