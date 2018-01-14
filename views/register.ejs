@@ -1,11 +1,13 @@
-<p>Hello World - please register</p>
+<%include partials/header %>
 
-<form method="POST" action="/register">
-    <input type="text" placeholder="Username" name="username">
-    <input type="password" placeholder="password" name="password">
-    <button>Submit</button>
-</form>
 
-<p><a href="/register">Register</a></p>
-<p><a href="/login">Login </a></p>
-<p><a href="/logout">logout</a></p>
+<div class="loginContainer">
+    <p class="loginHeadline"> Please register to become part of the DB</p>
+    <form method="POST" action="/register">
+        <input class="loginButton"  type="text" placeholder="Username" name="username">
+        <input class="loginButton"  type="password" placeholder="password" name="password"></br>
+        <button class="loginButton btn btn-primary">Submit</button>
+    </form>
+</div class="loginContainer">
+
+<%include partials/footer%>
