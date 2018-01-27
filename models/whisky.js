@@ -9,7 +9,8 @@ var whiskySchema = new mongoose.Schema({
    cask: String,
    region: String,
    taste:Number,
-   image:String
+   image:String, 
+   comment: String
 });
 
 module.exports = mongoose.model("whisky", whiskySchema);
