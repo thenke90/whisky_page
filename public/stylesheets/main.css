@@ -82,3 +82,8 @@ a {
 .comment{
     height: 50px;
 }
+
+.form-control{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

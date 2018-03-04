@@ -29,7 +29,6 @@ router.get("/collection",isLoggedIn, function(req,res){
          }); 
       }
    });  
-   
 });
 
 //CREATE new entry
@@ -53,6 +52,27 @@ router.post("/collection", function(req,res){
          }
       });
 });
+
+//get filtered whiskies-->löse mit custom params nicht body parser
+router.get("/collection/filtered?distillery=:dist&age=:ag&cask=:ca",function(req,res){
+    Whisky.find({}, function (err,allWhisky){
+      if (err){
+         console.log(err);
+      }else{
+         Whisky.count({},function(err, count){
+            if (count){
+               res.render("index", {
+                  whisky: allWhisky,
+                  count: count
+               });
+            }else {
+               console.log(err);
+            }
+         }); 
+      }
+   });  
+});
+
 
 //Show more infors about the whisky
 router.get("/collection/:id",function(req, res){
