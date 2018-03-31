@@ -42,7 +42,11 @@ router.post("/collection", function(req,res){
    var taste = req.body.taste;
    var image = req.body.image;
    var comment = req.body.comment;
-   var newWhisky = {date: date, distillery: distillery, age:age, name:name, cask: cask, region:region, taste:taste, image:image, comment:comment};
+   var author = {
+        id: req.user._id,
+        username: req.user.username
+    };
+   var newWhisky = {date: date, distillery: distillery, age:age, name:name, cask: cask, region:region, taste:taste, image:image, comment:comment, author: author};
    //new whisky an save to db
    Whisky.create(newWhisky, function(err,newlyCreated){
          if (err){

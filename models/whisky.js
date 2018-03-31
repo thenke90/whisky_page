@@ -10,7 +10,14 @@ var whiskySchema = new mongoose.Schema({
    region: String,
    taste:Number,
    image:String, 
-   comment: String
+   comment: String,
+   author: {
+      id: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "User"
+      },
+      username: String
+   }
 });
 
 module.exports = mongoose.model("whisky", whiskySchema);
