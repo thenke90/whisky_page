@@ -13,7 +13,8 @@ router.get("/homepage",isLoggedIn, function(req,res){
 
 //INDEX Path lists all whiskies
 router.get("/collection",isLoggedIn, function(req,res){
-   Whisky.find({}, function (err,allWhisky){
+   //user should be identified by using find condition like author = user
+   Whisky.find({"author.username": req.user.username}, function (err,allWhisky){
       if (err){
          console.log(err);
       }else{
