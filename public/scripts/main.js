@@ -23,13 +23,19 @@ function myFunction() {
            divTile[i].style.display = "none";
         }
     }
+
     
     var newP = document.createElement("p"); 
 	var newContent = document.createTextNode("Search results:"+""+whiskyNumber); 
 	newP.appendChild(newContent);
+    newP.setAttribute("id","searchResult");
     
-    var currentDiv = document.getElementById("myInput"); 
-	currentDiv.insertAdjacentElement("afterend", newP); 
+    var currentDiv = document.getElementById("myInput");
+    var oldP = currentDiv.parentElement.querySelector('p');
+        if (oldP) {
+    	oldP.remove();
+    }
+	    currentDiv.insertAdjacentElement("afterend", newP);
 }
 
 
