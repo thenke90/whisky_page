@@ -13,23 +13,25 @@ router.get("/homepage",isLoggedIn, function(req,res){
 
 //INDEX Path lists all whiskies
 router.get("/collection",isLoggedIn, function(req,res){
-   //user should be identified by using find condition like author = user
    Whisky.find({"author.username": req.user.username}, function (err,allWhisky){
       if (err){
          console.log(err);
       }else{
-         Whisky.count({},function(err, count){
+         Whisky.count({"author.username": req.user.username},function(err, count){
             if (count){
                res.render("index", {
                   whisky: allWhisky,
                   count: count
                });
             }else {
-               console.log(err);
+               res.render("index", {
+                  whisky: allWhisky,
+                  count: "0"
+               });
             }
          }); 
       }
-   });  
+   }); 
 });
 
 //CREATE new entry
