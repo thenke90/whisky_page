@@ -1,8 +1,47 @@
 var express = require("express"),
-    router = express.Router(),
-    Whisky = require("../models/whisky");
+    router  = express.Router(),
+    Whisky  = require("../models/whisky"),
+    bodyParser = require("body-parser"),
+    path    = require("path"),
+    crypto  = require("crypto"),
+    mongoose = require("mongoose"),
+    multer = require("multer"),
+    GridFsStorage = require("multer-gridfs-storage"),
+    Grid = require("gridfs-stream"),
+    methodOverride = require("method-override"),
+    mLab = require("../custom_modules/db_connection")
 
 
+//connects to Mongo and creates the collection    
+mLab.once('open', function () {
+  var gfs = Grid(mLab.db, mongoose.mongo);
+  gfs.collection('uploads');
+});
+   
+// Create storage engine
+var storage = new GridFsStorage({
+  url: "mongodb://tobias:12345@ds129706.mlab.com:29706/whisky_page",
+  file: (req, file) => {
+    return new Promise((resolve, reject) => {
+      crypto.randomBytes(16, (err, buf) => {
+        if (err) {
+          return reject(err);
+        }
+        var filename = buf.toString('hex') + path.extname(file.originalname);
+        var fileInfo = {
+          filename: filename,
+          bucketName: 'uploads'
+        };
+        resolve(fileInfo);
+      });
+    });
+  }
+});
+var upload = multer({ storage });   
+   
+
+
+   
 //NEW shows form to create new entry
 router.get("/homepage",isLoggedIn, function(req,res){
    res.render("homepage");
@@ -30,12 +69,18 @@ router.get("/collection",isLoggedIn, function(req,res){
                });
             }
          }); 
-      }
+       }
    }); 
 });
 
+router.post('/upload', upload.single('file'), function(req, res) {
+  // res.json({ file: req.file });
+  res.redirect('homepage');
+});
+
+
 //CREATE new entry
-router.post("/collection", function(req,res){
+router.post("/collection",upload.single('file'), function(req,res){
    var date = req.body.date;
    var distillery = req.body.distillery;
    var age = req.body.age;

@@ -19,5 +19,5 @@ var whiskySchema = new mongoose.Schema({
       username: String
    }
 });
-
+//model name whisky gets pluralized to collection name whiskies
 module.exports = mongoose.model("whisky", whiskySchema);
