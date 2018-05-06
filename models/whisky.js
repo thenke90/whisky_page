@@ -17,6 +17,10 @@ var whiskySchema = new mongoose.Schema({
          ref: "User"
       },
       username: String
+   },
+   picture: {
+      id: String,
+      fileName:String,
    }
 });
 //model name whisky gets pluralized to collection name whiskies
