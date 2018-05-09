@@ -72,9 +72,12 @@
                                             }
                                         }
                                 </script>
-                            </div>     
-                               
+                            </div>
+                            <%if (whisky.image === ""){%>
+                            <img id="indexFoto" src="/image/<%=whisky.picture.fileName%>"> 
+                            <% }else{ %>
                             <img id="indexFoto" src="<%=whisky.image%>">
+                            <% } %>
                             <p style="margin: 10px">
                                 <a href="/collection/<%= whisky._id%>" class="btn btn-primary">see more</a>
                             </p>
@@ -84,3 +87,5 @@
     </div>     
 </div>    
     <%include partials/footer %>
+    
+  

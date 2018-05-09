@@ -87,12 +87,13 @@ router.post("/collection",upload.single('file'), function(req,res){
    var image = req.body.image;
    var comment = req.body.comment;
    var author = {
-        id: req.user._id,
+        //checks the diffrent object fields like an if statement and returns only false in the data 
+        id: req && req.user && req.user._id,
         username: req.user.username
     };
    var picture = {
-       id: req.file.id,
-       fileName: req.file.filename
+       id: req && req.file && req.file.id,
+       fileName: req && req.file && req.file.filename
    }; 
 
    var newWhisky = {date: date, 
@@ -109,7 +110,7 @@ router.post("/collection",upload.single('file'), function(req,res){
    //new whisky an save to db
    Whisky.create(newWhisky, function(err,newlyCreated){
          if (err){
-            console.log(err);
+            console.log(err + "really???????????");
          }else {
             res.redirect("/collection");
          }
