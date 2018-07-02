@@ -112,7 +112,7 @@ router.post("/collection",upload.single('file'), function(req,res){
          if (err){
             console.log(err + "really???????????");
          }else {
-            res.redirect("/collection");
+            res.redirect("/homepage");
          }
       });
 });
@@ -179,4 +179,4 @@ function isLoggedIn(req, res, next){
 
 module.exports = router;
 
-//tom is stupid
+//tom is stupid and others too
