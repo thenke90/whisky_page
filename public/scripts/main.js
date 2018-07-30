@@ -55,3 +55,51 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
+//jquery to do the upload of the image in the FE and to show the progress
+$(document).ready(function() {
+
+	$("form[name='newWhisky']").on('submit', function(event) {
+
+		event.preventDefault();
+
+		var formData = new FormData($("form[name='newWhisky']")[0]);
+
+		$.ajax({
+			xhr : function() {
+				var xhr = new window.XMLHttpRequest();
+
+				xhr.upload.addEventListener('progress', function(e) {
+
+					if (e.lengthComputable) {
+
+						console.log('Bytes Loaded: ' + e.loaded);
+						console.log('Total Size: ' + e.total);
+						console.log('Percentage Uploaded: ' + (e.loaded / e.total))
+
+						var percent = Math.round((e.loaded / e.total) * 100);
+
+						$('#progressBar').attr('aria-valuenow', percent).css('width', percent + '%').text(percent + '%');
+                        
+					}
+
+				});
+
+				return xhr;
+			},
+			type : 'POST',
+			url : '/collection',
+			data : formData,
+			processData : false,
+			contentType : false,
+			success : function() {
+				$("p[name='progressHeadline']").css("color", "green");
+				alert('File uploaded!');
+			}
+		});
+
+	});
+
+});
+

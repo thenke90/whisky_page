@@ -41,3 +41,5 @@ app.use(indexRoutes);
 app.listen(process.env.PORT, process.env.IP, function(){
   console.log("server started");  
 });
+
+//RUN APP with Nodedemon via npm run dev
