@@ -42,4 +42,4 @@ app.listen(3000, function(){
   console.log("server started");  
 });   
 
-//RUN APP with Nodedemon via npm run dev
+//RUN APP with Nodedemon via command: npm run dev
