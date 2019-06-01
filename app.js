@@ -38,8 +38,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use(whiskyRoutes);
 app.use(indexRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(3000, function(){
   console.log("server started");  
-});
+});   
 
 //RUN APP with Nodedemon via npm run dev
