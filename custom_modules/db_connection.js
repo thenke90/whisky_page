@@ -1,5 +1,6 @@
 var mongoose = require("mongoose")
 
-module.exports = mongoose.connect("mongodb://tobias:12345@ds129706.mlab.com:29706/whisky_page", {useMongoClient: true});
+module.exports = mongoose.connect("mongodb://tobias:O3L4,Co3l4,c@cluster0.nk9kl.mongodb.net/whisky_page?retryWrites=true&w=majority", {useMongoClient: true});
+
 
  
